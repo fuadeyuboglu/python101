@@ -1,26 +1,44 @@
-fibonacci = [1, 1]
-x = 0
+# Alternative 1
+
+fibo = [1, 1]
 
 for i in range(8):
-    i = fibonacci[x] + fibonacci[x + 1]
-    fibonacci.append(i)
-    x += 1
+    fibo.append(fibo[i] + fibo[i + 1])
     
+print(fibo)
 
-print(fibonacci)
+# Alternative 2
 
-# Solution2
-fibonacci = []
-x = 0
+fibo = []
 
-for i in range(1, 11):
-    if len(fibonacci) < 2:
-        fibonacci.append(x+1)
+for i in range(1, 9):
+    
+    if len(fibo) < 2:
+        fibo.append(i+1)
         
     else:
-        i = fibonacci[x] + fibonacci[x + 1]
-        fibonacci.append(i)
-        x += 1
-        
+        fibo.append(fibo[-1] + fibo[-2])
+            
+print(fibo)
+
+# Alternative 3
+
+fibonacci = []
+x, y = 1, 1
+
+while x <= 55:
+    fibonacci.append(x)
+    x, y = y, (x + y)
     
-print(fibonacci)
+print(fibonacci) 
+
+# Alternative 4
+
+def fibonacci(n):
+    fibo = [1,1]
+    
+    for i in range(2, n):
+        next_num = fibo[-1] + fibo[-2]
+        fibo.append(next_num)
+    return fibo
+print('fibonacci numbers: ', fibonacci(10)) 
