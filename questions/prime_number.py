@@ -19,3 +19,17 @@ for i in range(1, n+1):
 
 if count < 3: print(f'{n} is a prime number.')
 else: print(f'{n} is NOT a prime number.')
+
+    
+# Assignment 15:
+
+prime = []
+n = 100 # int(input("Enter a number: "))
+
+for x in range(1,n) :
+    count = 0
+    for y in range(1, n) :
+        if x % y == 0 : count += 1
+    if count == 2 : prime.append(x)
+
+print(prime)
