@@ -41,5 +41,7 @@ print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
 
 
-# Modifying attribute's value directly
+# Modifying an attribute's value directly
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
         
